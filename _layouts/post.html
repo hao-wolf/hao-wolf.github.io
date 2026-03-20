@@ -1,0 +1,22 @@
+<!-- _layouts/post.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <article>
+        {{ content }}
+    </article>
+
+    <!-- Navigation Links -->
+    <div class="pagination">
+        {% if page.previous.url %}
+            <a href="{{ page.previous.url }}" class="previous">Previous</a>
+        {% endif %}
+        {% if page.next.url %}
+            <a href="{{ page.next.url }}" class="next">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>

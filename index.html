@@ -1,54 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        h1 { color: #333; }
-        h2 { color: #555; }
-        .date { color: #888; font-size: 0.9em; }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>My Simple Blog</h1>
-        
-        <div class="card">
-            <h2>Blog Post Title</h2>
-            <p class="date">Posted on March 20, 2026</p>
-            <!-- Replace 'blog-image.jpg' with your image file -->
-            <img src="rice.jpg" alt="Descriptive text of the image">
-            <p>This is a simple blog post description. It includes an image and some text.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
-        </div>
-    </div>
-
-</body>
-</html>
+<!-- index.html -->
+---
+layout: default
+title: Blog Index
+---
+<h1>Blog Posts</h1>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
