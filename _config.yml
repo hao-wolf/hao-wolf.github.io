@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
-title: Haoling's Note
-description: Bookmark this to keep an eye on my project updates!
-show_downloads: "true"
-custom:
-  background_image: "/assets/images/rice.jpg"
+title: Haoling's Notebook
+description: My project updates, notes, and thoughts.
+show_downloads: "false"
+
+background_image: "/assets/images/rice.jpg"
