@@ -1,1 +1,1 @@
-Haoling is working on data communication technologies in fields of imaging, radio/mmWave, and AI edge computing.
+Independent electronics test and validation specialist with deep expertise in RF/mmWave systems, photon-counting detectors, and communication platforms. Experienced in delivering custom test solutions, from architecture through implementation, for complex and high-performance systems. Known for rapidly diagnosing difficult system-level issues and enabling reliable product validation in R&D and production environments.
