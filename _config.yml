@@ -1,6 +1,7 @@
 theme: jekyll-theme-cayman
 title: Haoling's blog
 description: My project updates, notes, and thoughts.
-show_downloads: "false"
+show_downloads: false
 
 background_image: "/assets/images/rice.jpg"
+include: ["_posts"]
