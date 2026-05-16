@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Topics:
+# Haoling's Notes:
 ## Ways we can sense the world and detector technologies
 - RF, mmWave
 - light
