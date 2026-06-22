@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Haoling, Move!
+# Haoling!
 
 ## Harness Engineering
 For my work as software verification engineer, these are my readings, practising:
