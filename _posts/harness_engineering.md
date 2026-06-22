@@ -11,4 +11,4 @@
 - [ ] Mitchell Hashimoto: My AI Adoption Journey https://mitchellh.com/writing/my-ai-adoption-journey
 
 - [ ] martinfowler.com: Harness Engineering - first thoughts https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html Harness engineering for coding agent users https://martinfowler.com/articles/harness-engineering.html
-- [ ] [Project glasswing](!https://www.anthropic.com/glasswing)
+- [ ] [Project glasswing](https://www.anthropic.com/glasswing)
