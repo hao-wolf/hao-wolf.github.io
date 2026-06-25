@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Haoling, get mounted!
+# Haoling's learning!
 
 ## Harness Engineering
 For my work as software verification engineer, these are my readings, practising:
