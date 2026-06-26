@@ -80,4 +80,13 @@ The through-line: anything that runs automatically (hooks, auto-updating extensi
 Extensions for VsCode for FPGA Dev: TerosHDL, VHDL LS, Verilog-HDL/SystemVerilog
 
 ## Code Review
-https://github.com/anthropics/defending-code-reference-harness
+- [Reference harness](https://github.com/anthropics/defending-code-reference-harness)t
+- [Blog post](https://github.com/anthropics/defending-code-reference-harness/blob/main/docs/blog-post.md)
+### And for safety 
+- limit using npm packages and nuget  packages to the bare minimum you need. Any public package you use adds an attack vector. AI attacks are happening to those repositories and malicious code can then get into your machine (work or personal).
+ 
+- Same with browser extensions, VsCode or other tools extensions. Use very trusted names only and limit your exposure. Make sure VsCode extensions aren't "Auto Update" unless very trusted sources.
+ 
+- It's easy to compromise an extension and then auto push subtle malicious update
+
+- The trend is that open source is going to become very dangerous to use - and so our world is going to be rocked a little bit. The good news is that if you've been building your AI building skills, then this matters less and less as it becomes smarter/better to write most of our own things anyway for the kinds of tasks we are doing and this limits the attack surface.
