@@ -76,3 +76,8 @@ Pin and review. Lock versions, review additions to project files (.csproj, packa
 Our data-silo NuGets (ProductDevDb, QualityOpsDb, DwsGlobalEnums, …) are internal packages we control — a different risk profile from public registries, but still version-pinned and reviewed on every bump.
 The through-line: anything that runs automatically (hooks, auto-updating extensions, transitively-pulled dependencies) is something a human didn't approve at the moment it ran. Keep that set small, reviewed, and pinned.
 
+## FPGA 
+Extensions for VsCode for FPGA Dev: TerosHDL, VHDL LS, Verilog-HDL/SystemVerilog
+
+## Code Review
+https://github.com/anthropics/defending-code-reference-harness
