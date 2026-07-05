@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Haoling's learning!
+# Haoling's reading listing!
 
 ## Harness Engineering
 For my work as software verification engineer, these are my readings, practising:
