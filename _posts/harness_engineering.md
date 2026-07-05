@@ -1,6 +1,6 @@
 
 <details>
-  <summary>Reading list - 相关文章链接 </summary>
+  <summary>Reading list - 相关文章链接 </summary></details>
 ## Reading list
 - [ ] OpenAI: Harness engineering: leveraging Codex in an agent-first world https://openai.com/zh-Hans-CN/index/harness-engineering/
 
@@ -13,10 +13,10 @@
 - [ ] martinfowler.com: Harness Engineering - first thoughts https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html Harness engineering for coding agent users https://martinfowler.com/articles/harness-engineering.html
 - [ ] [Project glasswing](https://www.anthropic.com/glasswing)
 
-</details>
+
 
 <details>
-<summary>Repository AI-Native - Train the beast </summary>
+<summary>Repository AI-Native - Train the beast </summary></details>
 ## Repository AI-Native - Build harness for the beast!
 ### If use both assistants in IDEs, which is why direction lives in two files:
 
@@ -38,7 +38,6 @@ Claude Code reads CLAUDE.md, the .claude/skills/, and the permission/hook config
 [Agents](4-step.md)
 
 
-</details>
 
 ## How we refer to files and code
 
