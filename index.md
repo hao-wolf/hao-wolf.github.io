@@ -3,7 +3,7 @@ layout: default
 ---
 # Haoling's reading list
 ## AI and Cognitive
-- [思考，快与慢 by DIANEL KAHNEMAN](./_posts/thinking_slow_and_fast.html)
+- [思考，快与慢 by DIANEL KAHNEMAN](./_posts/thinking_slow_and_fast_bilingual.html)
 ## Harness Engineering
 For my work as software verification engineer, these are my readings, practising:
 - [Understand challenges posted by AI,Use powerful AI to find and fix security problems before attackers do.](./_posts/harness_engineering.md)
