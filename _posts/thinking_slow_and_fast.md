@@ -1,5 +1,5 @@
-### think slow and fast
-```
+### Think slow and fast
+
 一、两种思维系统：快思考与慢思考
 卡尼曼提出人类思维由两套系统组成：
 
