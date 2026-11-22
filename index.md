@@ -1,17 +1,14 @@
 ---
 layout: default
 ---
-# Haoling's reading list
+# 浩哥读书
 ## AI and Cognitive
 - [Thinking，fast and slow](./_posts/thinking_slow_and_fast_bilingual.html)
-## Harness Engineering
-For my work as software verification engineer, these are my readings, practising:
-- [Understand challenges posted by AI,Use powerful AI to find and fix security problems before attackers do.](./_posts/harness_engineering.md)
+
+- [Understand challenges posted by AI, Use powerful AI to find and fix security problems before attackers do.](./_posts/harness_engineering_bilingual.html)
 
 ## Linux Kernel, drivers, and Modules
-A serial of articles about Lernel, kernel module, hardware drivers.
-
-[Rebuilding a Stable Linux Kernel Environment for Driver Development](./_posts/multi-kernel.md).
+- [Rebuilding a Stable Linux Kernel Environment for Driver Development](./_posts/multi-kernel.md).
 
 ## FPGA and in-design instrumentation(ILA)
 A serial of articles about FPGA simulation, testbench, and IP instrumentation.

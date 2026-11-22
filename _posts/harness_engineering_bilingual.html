@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haoling's Reading List | 浩哥读书</title>
+<style>
+:root{color-scheme:light;--ink:#243044;--muted:#667085;--accent:#2864a5;--line:#e4e9f0;--panel:#f6f8fb}
+*{box-sizing:border-box}body{margin:0;background:#f2f5f9;color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Arial,"Microsoft YaHei",sans-serif}
+.wrap{max-width:980px;margin:38px auto;padding:0 20px}.top{background:linear-gradient(135deg,#173b63,#3477b8);color:white;padding:30px 34px;border-radius:18px;box-shadow:0 10px 28px #173b6322}
+h1{margin:0;font-size:clamp(26px,4vw,36px);line-height:1.25}.subtitle{margin:8px 0 0;color:#e4effb}.toolbar{display:flex;justify-content:flex-end;margin:18px 0}
+button{border:0;border-radius:999px;background:#fff;color:#245b91;padding:10px 18px;font-weight:700;cursor:pointer;box-shadow:0 2px 8px #152b4518}
+button:hover{background:#eaf3fc}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:25px 28px;margin:18px 0;box-shadow:0 4px 16px #1b36500a}
+h2{font-size:23px;margin:0 0 15px;padding-bottom:9px;border-bottom:1px solid var(--line)}h3{font-size:18px;margin:22px 0 8px;color:#315b83}
+p{margin:8px 0}ul{padding-left:24px;margin:8px 0}li{margin:9px 0}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}
+.checklist{list-style:none;padding:0}.checklist li{padding-left:28px;position:relative}.checklist input{position:absolute;left:0;top:7px;accent-color:var(--accent)}
+.note{background:var(--panel);border-left:4px solid #78a8d5;padding:12px 15px;border-radius:5px;margin:12px 0}
+.muted{color:var(--muted)}.lang-zh{display:none}body.zh .lang-en{display:none}body.zh .lang-zh{display:block}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:18px}
+@media(max-width:600px){.wrap{margin:16px auto;padding:0 12px}.top,.card{padding:21px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>浩哥读书 <span style="opacity:.8">|</span> Haoling's Reading List</h1>
+  <p class="subtitle lang-en">Reading notes, references, and ideas for building AI-native software.</p>
+  <p class="subtitle lang-zh">记录阅读资料、技术参考，以及构建 AI 原生软件的实践思路。</p>
+</header>
+<div class="toolbar"><button id="toggle" type="button" aria-label="Switch language">中文 / English</button></div>
+
+<main>
+<section class="card">
+  <div class="lang-en">
+    <h2>Reading List</h2>
+    <ul class="checklist">
+      <li><input type="checkbox"> <strong>OpenAI:</strong> <a href="https://openai.com/zh-Hans-CN/index/harness-engineering/" target="_blank" rel="noopener">Harness engineering: leveraging Codex in an agent-first world</a></li>
+      <li><input type="checkbox"> <strong>Anthropic:</strong> <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank" rel="noopener">Effective harnesses for long-running agents</a>; <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps" target="_blank" rel="noopener">Harness design for long-running application development</a></li>
+      <li><input type="checkbox"> <strong>LangChain:</strong> <a href="https://www.langchain.com/blog/the-anatomy-of-an-agent-harness" target="_blank" rel="noopener">The Anatomy of an Agent Harness</a></li>
+      <li><input type="checkbox"> <strong>Mitchell Hashimoto:</strong> <a href="https://mitchellh.com/writing/my-ai-adoption-journey" target="_blank" rel="noopener">My AI Adoption Journey</a></li>
+      <li><input type="checkbox"> <strong>Martin Fowler:</strong> <a href="https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html" target="_blank" rel="noopener">Harness Engineering - first thoughts</a>; <a href="https://martinfowler.com/articles/harness-engineering.html" target="_blank" rel="noopener">Harness engineering for coding agent users</a></li>
+      <li><input type="checkbox"> <strong>Anthropic:</strong> <a href="https://www.anthropic.com/glasswing" target="_blank" rel="noopener">Project Glasswing</a></li>
+    </ul>
+  </div>
+  <div class="lang-zh">
+    <h2>阅读清单</h2>
+    <ul class="checklist">
+      <li><input type="checkbox"> <strong>OpenAI：</strong><a href="https://openai.com/zh-Hans-CN/index/harness-engineering/" target="_blank" rel="noopener">Harness 工程：在 Agent 优先的世界中发挥 Codex 的作用</a></li>
+      <li><input type="checkbox"> <strong>Anthropic：</strong><a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank" rel="noopener">面向长时间运行 Agent 的有效 Harness</a>；<a href="https://www.anthropic.com/engineering/harness-design-long-running-apps" target="_blank" rel="noopener">长周期应用开发的 Harness 设计</a></li>
+      <li><input type="checkbox"> <strong>LangChain：</strong><a href="https://www.langchain.com/blog/the-anatomy-of-an-agent-harness" target="_blank" rel="noopener">Agent Harness 的构成解析</a></li>
+      <li><input type="checkbox"> <strong>Mitchell Hashimoto：</strong><a href="https://mitchellh.com/writing/my-ai-adoption-journey" target="_blank" rel="noopener">我的 AI 应用历程</a></li>
+      <li><input type="checkbox"> <strong>Martin Fowler：</strong><a href="https://martinfowler.com/articles/exploring-gen-ai/harness-engineering-memo.html" target="_blank" rel="noopener">Harness 工程：初步思考</a>；<a href="https://martinfowler.com/articles/harness-engineering.html" target="_blank" rel="noopener">面向编程 Agent 使用者的 Harness 工程</a></li>
+      <li><input type="checkbox"> <strong>Anthropic：</strong><a href="https://www.anthropic.com/glasswing" target="_blank" rel="noopener">Glasswing 项目</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <div class="lang-en">
+    <h2>Repository AI-Native — Build a Harness for the Beast!</h2>
+    <h3>When using both assistants in IDEs</h3>
+    <p>This is why the project direction is maintained in two files:</p>
+    <ul>
+      <li>GitHub Copilot automatically reads <code>.github/copilot-instructions.md</code>. Skills are loaded where supported by the client.</li>
+      <li>Claude Code reads <code>CLAUDE.md</code>, <code>.claude/skills/</code>, and the permission/hook configuration under <code>.claude/</code>.</li>
+    </ul>
+    <h3>Repository level</h3><p><a href="1-step.md">CLAUDE.md and .github/copilot-instructions.md</a></p>
+    <h3>File level</h3><p><a href="2-step.md">Instructions</a></p>
+    <h3>Skills</h3><p><a href="3-step.md">Skills</a></p>
+    <h3>Custom agents</h3><p><a href="4-step.md">Agents</a></p>
+  </div>
+  <div class="lang-zh">
+    <h2>AI 原生代码仓库——为这头猛兽构建 Harness！</h2>
+    <h3>在 IDE 中同时使用两种 AI 助手</h3>
+    <p>因此，项目级指导原则分别维护在两个文件中：</p>
+    <ul>
+      <li>GitHub Copilot 会自动读取 <code>.github/copilot-instructions.md</code>。Skills（技能）会在客户端支持的情况下加载。</li>
+      <li>Claude Code 会读取 <code>CLAUDE.md</code>、<code>.claude/skills/</code>，以及 <code>.claude/</code> 目录下的权限和 Hook 配置。</li>
+    </ul>
+    <h3>代码仓库级别</h3><p><a href="1-step.md">CLAUDE.md 与 .github/copilot-instructions.md</a></p>
+    <h3>文件级别</h3><p><a href="2-step.md">指令（Instructions）</a></p>
+    <h3>技能（Skills）</h3><p><a href="3-step.md">技能</a></p>
+    <h3>自定义 Agent</h3><p><a href="4-step.md">Agents</a></p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="lang-en">
+    <h2>How to Refer to Files and Code</h2>
+    <ul>
+      <li>In IDE chat (VS Code / Visual Studio extensions), use Markdown links with paths relative to the workspace root:
+        <ul>
+          <li>A file: <code>.github/copilot-instructions.md</code></li>
+          <li>A specific line: <code>.claude/skills/whats-new-newsletter/SKILL.md#L42</code></li>
+          <li>A line range: <code>TheWolfDen/Program.cs#L10-L25</code></li>
+          <li>A folder: <code>.claude/skills/</code></li>
+        </ul>
+      </li>
+      <li>In commit messages, pull requests, and code comments, use the <code>file_path:line_number</code> convention, for example <code>TheWolfDen/Program.cs:42</code>. Most tools render it as a jump link.</li>
+    </ul>
+    <p><strong>Attach context deliberately.</strong> In Copilot, use <code>#file</code> or selection references. In Claude Code, highlight the code to include it as context. Pointing the assistant to the right file is better than pasting a wall of code.</p>
+    <p>This is also how Skills and documentation cross-link. For example, a standards file can link directly to <code>frontend-ui-conventions/SKILL.md</code> for popover rules instead of repeating those rules.</p>
+  </div>
+  <div class="lang-zh">
+    <h2>如何引用文件和代码</h2>
+    <ul>
+      <li>在 IDE 聊天窗口（VS Code / Visual Studio 扩展）中，使用 Markdown 链接，路径相对于工作区根目录：
+        <ul>
+          <li>文件：<code>.github/copilot-instructions.md</code></li>
+          <li>指定行：<code>.claude/skills/whats-new-newsletter/SKILL.md#L42</code></li>
+          <li>行范围：<code>TheWolfDen/Program.cs#L10-L25</code></li>
+          <li>文件夹：<code>.claude/skills/</code></li>
+        </ul>
+      </li>
+      <li>在提交说明、Pull Request 和代码注释中，使用 <code>file_path:line_number</code> 格式，例如 <code>TheWolfDen/Program.cs:42</code>。大多数工具会将其显示为可跳转链接。</li>
+    </ul>
+    <p><strong>有意识地提供上下文。</strong>在 Copilot 中使用 <code>#file</code> 或选区引用；在 Claude Code 中，选中代码即可将其作为上下文。准确指出相关文件，通常比粘贴大段代码更有效。</p>
+    <p>Skills 和文档之间也可以通过这种方式交叉引用。例如，标准规范文件可以直接链接到 <code>frontend-ui-conventions/SKILL.md</code> 中的弹出层规则，而不必重复描述这些规则。</p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="lang-en">
+    <h2>Risks to Be Aware Of</h2>
+    <p>AI-native tooling introduces a larger attack surface and new ways to make costly mistakes. Treat these risks as first-class concerns.</p>
+    <h3>Hooks (Claude Code)</h3>
+    <p>Hooks allow Claude Code to run arbitrary shell commands automatically in response to events (a tool call, prompt submission, or session end). This repository uses them for benign purposes: logging Skill usage and document reads, reporting usage, and producing session summaries through reviewed PowerShell scripts.</p>
+    <p>That same capability creates risk: a hook can run without asking for your approval each time.</p>
+    <ul>
+      <li>Review every hook before it is merged, just like any other code. Keep scripts in <code>.claude/hooks/</code> so changes can be reviewed in diffs.</li>
+      <li>Be suspicious of hooks introduced through <code>settings.local.json</code> or a cloned repository you did not create. A malicious hook is simply code that runs automatically on your machine.</li>
+      <li>Copilot does not currently have an equivalent automatic shell-execution hook mechanism; this is a Claude-Code-specific consideration.</li>
+    </ul>
+    <h3>Editor extensions</h3>
+    <ul>
+      <li>Disable automatic updates for extensions you do not strongly trust. An auto-updating extension can push compromised or hijacked code onto your machine without a review step. Pin versions and update deliberately.</li>
+      <li>Prefer first-party or well-established extensions, and audit the permissions an extension requests.</li>
+    </ul>
+    <h3>Dependencies and the software supply chain</h3>
+    <p>This is a major concern, and AI assistants can amplify it because they readily suggest packages to solve problems.</p>
+    <ul>
+      <li>Open-source packages (npm, NuGet, PyPI, etc.) are targets for compromise. Attackers may take over a maintainer account or use a typosquatted package name to publish a malicious version. More dependencies mean greater exposure.</li>
+      <li>Reduce dependency scope. Avoid adding a package for something you can implement in a few lines. When an assistant says “just add library X,” assess whether the dependency is worth the supply-chain risk—not merely how much code it saves.</li>
+      <li>Pin and review dependencies. Lock versions, carefully review project-file changes (such as <code>.csproj</code> and <code>package.json</code>) in pull requests, and prefer well-maintained, widely used packages over niche ones.</li>
+      <li>Internal data-silo NuGet packages (ProductDevDb, QualityOpsDb, DwsGlobalEnums, etc.) are under our control and have a different risk profile from public registries, but their versions should still be pinned and every update reviewed.</li>
+    </ul>
+    <div class="note"><strong>Key principle:</strong> Anything that runs automatically—hooks, auto-updating extensions, or transitive dependencies—is something a person did not approve at the moment it ran. Keep that set small, reviewed, and version-pinned.</div>
+  </div>
+  <div class="lang-zh">
+    <h2>需要注意的风险</h2>
+    <p>AI 原生工具扩大了攻击面，也带来了新的失误方式。应当把这些风险作为重要事项认真管理。</p>
+    <h3>Hooks（Claude Code）</h3>
+    <p>Hooks 可以让 Claude Code 在特定事件发生时（例如调用工具、提交提示词或会话结束）自动运行任意 Shell 命令。本仓库将它们用于良性用途：通过经过审查的 PowerShell 脚本记录 Skill 使用情况和文档读取情况、报告使用统计，以及生成会话摘要。</p>
+    <p>但同一种能力也带来了风险：Hook 每次运行时都不一定会再次征求你的许可。</p>
+    <ul>
+      <li>每个 Hook 在合并前都必须审查，就像审查其他代码一样。将脚本保存在 <code>.claude/hooks/</code> 中，以便通过代码差异进行检查。</li>
+      <li>对于通过 <code>settings.local.json</code> 或你并未创建的克隆仓库引入的 Hook，要保持警惕。恶意 Hook 本质上就是一段会在你的机器上自动运行的代码。</li>
+      <li>Copilot 目前没有等同的自动运行 Shell 命令 Hook 机制；这是 Claude Code 特有的注意事项。</li>
+    </ul>
+    <h3>编辑器扩展</h3>
+    <ul>
+      <li>对于不够信任的扩展，关闭自动更新。自动更新的扩展可能在未经你审查的情况下，将被入侵或劫持的代码推送到你的机器上。应固定版本，并有意识地更新。</li>
+      <li>优先选择官方或信誉良好的扩展，并检查扩展申请的权限。</li>
+    </ul>
+    <h3>依赖项与软件供应链</h3>
+    <p>这是一个重要风险。AI 助手经常会主动推荐软件包来解决问题，因此可能进一步放大这一风险。</p>
+    <ul>
+      <li>开源软件包（npm、NuGet、PyPI 等）是攻击者的重点目标。攻击者可能接管维护者账号，或利用拼写相似的恶意包名发布恶意版本。依赖越多，暴露面越大。</li>
+      <li>尽量缩小依赖范围。几行代码就能实现的功能，不要轻易引入一个新包。当助手建议“直接添加库 X”时，应评估该依赖带来的供应链风险是否值得，而不只是看它能减少多少代码。</li>
+      <li>固定并审查依赖版本。锁定版本；在 Pull Request 中仔细审查项目文件（例如 <code>.csproj</code> 和 <code>package.json</code>）的变更；优先选择维护良好、使用广泛的软件包，而不是小众包。</li>
+      <li>内部数据隔离 NuGet 包（ProductDevDb、QualityOpsDb、DwsGlobalEnums 等）由我们控制，其风险情况不同于公共软件包仓库；但仍应固定版本，并在每次升级时进行审查。</li>
+    </ul>
+    <div class="note"><strong>核心原则：</strong>任何自动运行的内容——Hook、自动更新的扩展，或传递依赖——都意味着它运行时没有经过人工即时批准。应尽量减少这类内容，并确保它们经过审查且版本固定。</div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="lang-en">
+    <h2>FPGA</h2>
+    <p>VS Code extensions for FPGA development: TerosHDL, VHDL LS, and Verilog-HDL/SystemVerilog.</p>
+    <h2 style="margin-top:25px">Code Review and Security References</h2>
+    <ul>
+      <li><a href="https://github.com/anthropics/defending-code-reference-harness" target="_blank" rel="noopener">Reference harness</a></li>
+      <li><a href="https://github.com/anthropics/defending-code-reference-harness/blob/main/docs/blog-post.md" target="_blank" rel="noopener">Blog post</a></li>
+    </ul>
+    <h3>Additional safety reminders</h3>
+    <ul>
+      <li>Limit npm and NuGet packages to the bare minimum. Every public package adds an attack vector. Attackers target these repositories, and malicious code can make its way onto your work or personal machine.</li>
+      <li>The same applies to browser, VS Code, and other tool extensions. Use trusted names and limit exposure. Do not enable auto-update for VS Code extensions unless the source is highly trusted.</li>
+      <li>An extension can be compromised, allowing a subtle malicious update to be pushed automatically.</li>
+      <li>Open-source software may become increasingly risky to consume. This could significantly change our development environment. The positive side is that as AI-assisted development skills improve and models become more capable, we may be able to write more of the small tools we need ourselves, reducing our attack surface.</li>
+    </ul>
+  </div>
+  <div class="lang-zh">
+    <h2>FPGA</h2>
+    <p>用于 FPGA 开发的 VS Code 扩展：TerosHDL、VHDL LS 和 Verilog-HDL/SystemVerilog。</p>
+    <h2 style="margin-top:25px">代码审查与安全参考资料</h2>
+    <ul>
+      <li><a href="https://github.com/anthropics/defending-code-reference-harness" target="_blank" rel="noopener">Reference Harness（参考 Harness）</a></li>
+      <li><a href="https://github.com/anthropics/defending-code-reference-harness/blob/main/docs/blog-post.md" target="_blank" rel="noopener">博客文章</a></li>
+    </ul>
+    <h3>其他安全提醒</h3>
+    <ul>
+      <li>将 npm 和 NuGet 软件包的使用量限制在最低必要范围。每个公共软件包都会增加一个攻击入口。攻击者正在针对这些软件包仓库发动攻击，恶意代码可能因此进入你的工作电脑或个人电脑。</li>
+      <li>浏览器扩展、VS Code 扩展以及其他工具扩展也存在同样的问题。只使用可信度高的扩展，并尽量减少暴露面。除非扩展来源高度可信，否则不要为 VS Code 扩展启用自动更新。</li>
+      <li>扩展可能遭到入侵，攻击者随后便可能自动推送不易察觉的恶意更新。</li>
+      <li>使用开源软件的风险可能会越来越高，这可能显著改变我们的开发环境。积极的一面是，随着 AI 辅助开发能力不断提高、模型越来越强，我们可能可以自行编写更多日常所需的小工具，从而减少攻击面。</li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer>浩哥读书 · Haoling's Reading List</footer>
+</div>
+<script>
+const toggle=document.getElementById('toggle');
+toggle.addEventListener('click',()=>{
+  const zh=document.body.classList.toggle('zh');
+  document.documentElement.lang=zh?'zh-CN':'en';
+  toggle.textContent=zh?'切换到 English':'切换到中文';
+  localStorage.setItem('readingListLanguage',zh?'zh':'en');
+});
+if(localStorage.getItem('readingListLanguage')==='zh'){
+  document.body.classList.add('zh');
+  document.documentElement.lang='zh-CN';
+  toggle.textContent='切换到 English';
+}
+</script>
+</body>
+</html>
