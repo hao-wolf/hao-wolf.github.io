@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Radio Signals Literature Review — The Electromagnetic Spectrum and Its Applications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f7f4; --paper:#ffffff; --ink:#17202a; --muted:#5b6770; --line:#d9dee2;
+  --navy:#0f2a44; --teal:#0e7c7b; --amber:#c47a12; --amber-bg:#fdf3e0;
+  --teal-bg:#e6f3f2; --card:#f0f3f5; --accent:#0f2a44;
+  --shadow:0 10px 30px rgba(15,42,68,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0e141b; --paper:#151e28; --ink:#e8edf1; --muted:#a7b3bd; --line:#2a3642; --navy:#dbeafe; --teal:#4cc9c0; --amber:#f2b15c; --amber-bg:#2a2113; --teal-bg:#122e2d; --card:#1a2632; --accent:#7fb3e8; --shadow:0 10px 30px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader","Noto Serif SC",Georgia,serif;font-size:18px;line-height:1.75}
+button{min-height:40px}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:980px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.journal{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lang-switch{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang-switch button{border:0;background:transparent;padding:8px 18px;border-radius:999px;font-family:"Noto Sans SC",system-ui,sans-serif;font-weight:700;font-size:14px;cursor:pointer;color:var(--muted);min-width:76px}
+.lang-switch button.active{background:var(--navy);color:#fff}
+@media(prefers-color-scheme:dark){.lang-switch button.active{background:#e8edf1;color:#111}}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 40px}
+.paper{background:var(--paper);margin:28px auto;padding:52px 56px 44px;box-shadow:var(--shadow);border:1px solid var(--line);border-radius:6px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);text-align:center}
+h1{font-family:"Fraunces","Noto Serif SC",serif;font-size:42px;line-height:1.12;text-align:center;margin:16px 0 14px;color:var(--ink);font-weight:700}
+.subtitle{text-align:center;color:var(--muted);font-size:19px;line-height:1.5;max-width:720px;margin:0 auto}
+.meta{text-align:center;margin:26px 0 6px;font-family:"Noto Sans SC",system-ui,sans-serif;font-size:14px;color:var(--muted)}
+.meta strong{color:var(--ink)}
+.rule{height:3px;background:var(--ink);margin:28px 0 4px;position:relative}
+.rule:after{content:"";position:absolute;top:5px;left:0;right:0;height:1px;background:var(--ink)}
+.abstract{background:var(--card);padding:22px 24px;margin:28px 0;border-radius:4px}
+.abstract h3{margin:0 0 8px;font-family:"Noto Sans SC",sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.abstract p{margin:0;font-size:16.5px;line-height:1.7}
+.keywords{font-size:15px;margin-top:14px;color:var(--muted)}
+.keywords b{color:var(--ink)}
+h2{font-family:"Fraunces","Noto Serif SC",serif;font-size:27px;line-height:1.25;margin:42px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+h2:first-of-type{border-top:0}
+h3{font-family:"Noto Sans SC","Noto Serif SC",sans-serif;font-size:18px;margin:26px 0 8px}
+p{margin:0 0 14px}
+sup{color:var(--teal);font-size:.72em;font-weight:700}
+.toc{background:var(--teal-bg);padding:20px 24px;border-radius:6px;margin:24px 0}
+.toc h3{margin-top:0}
+.toc ol{margin:0;padding-left:20px;font-family:"Noto Sans SC",sans-serif;font-size:15px;line-height:2}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--teal)}
+/* spectrum */
+.spectrum{margin:28px 0 10px}
+.spectrum-bar{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.band{border:0;border-radius:6px;padding:14px 8px 12px;color:#fff;cursor:pointer;text-align:center;font-family:"Noto Sans SC",sans-serif;min-height:88px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.band b{font-size:13px;line-height:1.3}
+.band span{font-size:11px;opacity:.92;line-height:1.3}
+.band[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:2px}
+.b1{background:#334155}.b2{background:#0f4c81}.b3{background:#0e7c7b}.b4{background:#b7791f}.b5{background:#c2410c}.b6{background:#7c3aed}.b7{background:#111827}
+.band-detail{border:1px solid var(--line);border-left:5px solid var(--teal);background:var(--paper);padding:18px 20px;margin-top:12px;border-radius:4px}
+.band-detail h4{margin:0 0 6px;font-family:"Noto Sans SC",sans-serif;font-size:17px}
+.band-detail p{font-size:16px;margin:0;color:var(--muted)}
+.hint{font-family:"Noto Sans SC",sans-serif;font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+table{width:100%;border-collapse:collapse;font-family:"Noto Sans SC",sans-serif;font-size:14px;line-height:1.55;margin:18px 0}
+th,td{border-bottom:1px solid var(--line);padding:10px 10px;text-align:left;vertical-align:top}
+th{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.callout{background:var(--amber-bg);padding:18px 20px;border-radius:6px;margin:20px 0;font-size:16.5px}
+.callout b{font-family:"Noto Sans SC",sans-serif}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.tl{background:var(--card);padding:16px;border-radius:6px}
+.tl b{display:block;font-family:"IBM Plex Mono",monospace;color:var(--teal);font-size:20px}
+.tl span{font-family:"Noto Sans SC",sans-serif;font-size:13.5px;line-height:1.5;display:block;color:var(--muted)}
+.refs{font-size:15px;line-height:1.65}
+.refs li{margin-bottom:9px;overflow-wrap:anywhere}
+.refs a{color:var(--teal)}
+footer{max-width:980px;margin:0 auto;padding:8px 20px 36px;text-align:center;color:var(--muted);font-family:"Noto Sans SC",sans-serif;font-size:13.5px;line-height:1.7}
+.zh{display:none !important}
+body[data-lang="zh"] .en{display:none !important}
+body[data-lang="zh"] .zh{display:revert !important}
+body[data-lang="zh"] span.zh{display:inline !important}
+body[data-lang="zh"] .tl span.zh{display:block !important}
+body[data-lang="zh"]{font-family:"Noto Serif SC","Newsreader",serif}
+body[data-lang="zh"] h1,body[data-lang="zh"] h2{font-family:"Noto Serif SC",serif}
+.note{font-size:14.5px;color:var(--muted);font-family:"Noto Sans SC",sans-serif}
+@media(max-width:700px){
+  body{font-size:17px}
+  .paper{padding:30px 20px 32px;margin:16px auto}
+  h1{font-size:31px}
+  .spectrum-bar{grid-template-columns:repeat(2,1fr)}
+  .band{min-height:72px}
+  .timeline{grid-template-columns:1fr 1fr}
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:10px}
+  td{border:0;padding:4px 0}
+  td:first-child{font-weight:700;font-size:15px}
+  .topbar-inner{padding:10px 14px}
+  .journal{display:none}
+}
+@media print{.topbar{position:static}.paper{box-shadow:none;border:0}}
+</style>
+</head>
+<body data-lang="en">
+<header class="topbar"><div class="topbar-inner">
+  <div class="journal">J. Electromagnetic Science &amp; Engineering · Literature Review</div>
+  <div class="lang-switch" role="group" aria-label="Language / 语言">
+    <button id="btn-en" class="active" onclick="setLang('en')">ENGLISH</button>
+    <button id="btn-zh" onclick="setLang('zh')">中文</button>
+  </div>
+</div></header>
+
+<div class="wrap"><article class="paper">
+  <div class="kicker en">Literature Review · Vol. 2026</div>
+  <div class="kicker zh">文献综述 · 2026 卷</div>
+
+  <h1 class="en">From Power Grids to Gamma-Ray Bursts:<br>A Literature Review of Radio Signals and the Electromagnetic Spectrum</h1>
+  <h1 class="zh">从电力电网到伽马射线暴：<br>无线电信号与电磁波谱文献综述</h1>
+
+  <p class="subtitle en">How one physical phenomenon — electromagnetic radiation — underpins energy transfer, motors, communication, human vision, medical imaging, radar, lidar, and our view of the universe.</p>
+  <p class="subtitle zh">同一种物理现象——电磁辐射——如何支撑起能量传输、电动机、通信、人类视觉、医学成像、雷达、激光雷达，以及我们对宇宙的认识。</p>
+
+  <div class="meta en"><strong>Author:</strong> Literature Review &nbsp;·&nbsp; <strong>Date:</strong> 22 November 2026 &nbsp;·&nbsp; <strong>Field:</strong> Electromagnetics, Signal Processing &amp; Photonics</div>
+  <div class="meta zh"><strong>作者：</strong> 文献综述 &nbsp;·&nbsp; <strong>日期：</strong> 2026年11月22日 &nbsp;·&nbsp; <strong>领域：</strong> 电磁学、信号处理与光子学</div>
+
+  <div class="rule"></div>
+
+  <section class="abstract">
+    <h3 class="en">Abstract</h3><h3 class="zh">摘要</h3>
+    <p class="en">This review synthesises the literature on radio signals within the broader electromagnetic (EM) spectrum, spanning more than twenty orders of magnitude in frequency — from 50/60 Hz power systems and extremely low-frequency waves to gamma rays produced by high-energy particles. Drawing on foundational theory (Maxwell, Hertz, Shannon) and contemporary applications, we examine power transfer and electric motors, wireless communication, detection and sensing, human vision, ultraviolet technology, radar and lidar, X-ray computed tomography (CT), and astrophysics. The literature converges on a single conclusion: frequency is destiny. The choice of frequency determines penetration, resolution, information capacity, and biological effect, and every major EM technology is an exercise in trading these properties against one another.</p>
+    <p class="zh">本文综述无线电信号在更广阔的电磁（EM）波谱中的相关文献，频率跨度超过二十个数量级——从 50/60 Hz 电力系统与极低频波，一直到高能粒子产生的伽马射线。结合基础理论（麦克斯韦、赫兹、香农）与当代应用，本文依次考察能量传输与电动机、无线通信、探测与传感、人类视觉、紫外技术、雷达与激光雷达、X 射线计算机断层成像（CT）以及天体物理学。文献最终指向同一个结论：频率决定命运。频率的选择决定了穿透能力、分辨率、信息容量与生物效应，每一项重要的电磁技术，本质上都是在这些性质之间做权衡。</p>
+    <div class="keywords en"><b>Keywords:</b> radio waves; electromagnetic spectrum; wireless power transfer; radar; lidar; CT imaging; astrophysics; Shannon capacity</div>
+    <div class="keywords zh"><b>关键词：</b> 无线电波；电磁波谱；无线能量传输；雷达；激光雷达；CT 成像；天体物理学；香农容量</div>
+  </section>
+
+  <nav class="toc">
+    <h3 class="en">Contents</h3><h3 class="zh">目录</h3>
+    <ol class="en">
+      <li><a href="#s1">Introduction</a></li><li><a href="#s2">The Spectrum at a Glance — Interactive</a></li><li><a href="#s3">Low Frequencies: Power, Motors &amp; Energy Transfer</a></li><li><a href="#s4">Radio &amp; Microwaves: Communication and Detection</a></li><li><a href="#s5">Radar and Lidar</a></li><li><a href="#s6">Infrared, Visible Light &amp; Human Vision</a></li><li><a href="#s7">Ultraviolet</a></li><li><a href="#s8">X-Rays and CT Imaging</a></li><li><a href="#s9">Gamma Rays, High-Energy Particles &amp; Astrophysics</a></li><li><a href="#s10">Challenges and Future Directions</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#refs">References (unnumbered)</a></li>
+    </ol>
+    <ol class="zh">
+      <li><a href="#s1">引言</a></li><li><a href="#s2">电磁波谱总览（可交互）</a></li><li><a href="#s3">低频：电力、电动机与能量传输</a></li><li><a href="#s4">无线电与微波：通信与探测</a></li><li><a href="#s5">雷达与激光雷达</a></li><li><a href="#s6">红外、可见光与人类视觉</a></li><li><a href="#s7">紫外线</a></li><li><a href="#s8">X 射线与 CT 成像</a></li><li><a href="#s9">伽马射线、高能粒子与天体物理学</a></li><li><a href="#s10">挑战与未来方向</a></li><li><a href="#conclusion">结论</a></li><li><a href="#refs">参考文献（不编号）</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="en">1 &nbsp; Introduction</span><span class="zh">1 &nbsp; 引言</span></h2>
+  <p class="en">In 1865, James Clerk Maxwell unified electricity, magnetism, and light in a single set of equations, predicting waves that travel at the speed of light.<sup>[1]</sup> Heinrich Hertz experimentally generated and detected those waves in 1887–1888,<sup>[2]</sup> and within two decades Guglielmo Marconi had turned them into transatlantic communication. Few predictions in physics have proved so fertile. Today the same equations describe the hum of a power transformer, the signal in a mobile phone, the image on a CT scanner, and photons arriving from the edge of the observable universe.</p>
+  <p class="zh">1865 年，詹姆斯·克拉克·麦克斯韦将电、磁与光统一在一组方程中，预言了以光速传播的电磁波。<sup>[1]</sup> 1887—1888 年，海因里希·赫兹在实验中产生并探测到了这种波，<sup>[2]</sup> 不到二十年后，古列尔莫·马可尼便将其用于跨大西洋通信。物理学中很少有预言能如此硕果累累。今天，同一组方程既描述电力变压器的嗡鸣、手机中的信号、CT 扫描仪上的图像，也描述来自可观测宇宙边缘的光子。</p>
+  <p class="en">This review is organised by frequency, from low to high, because frequency — together with its reciprocal, wavelength (λ = c / f) — is the organising variable of the entire field. Low frequencies penetrate buildings and seawater but carry little information; high frequencies resolve fine detail and ionise matter but are easily blocked. Every application reviewed below sits somewhere on that trade-off curve.</p>
+  <p class="zh">本文按频率由低到高组织，因为频率——连同其倒数波长（λ = c / f）——是整个领域的组织变量。低频能穿透建筑与海水，却携带不了多少信息；高频能分辨精细细节、使物质电离，却很容易被阻挡。下文综述的每一个应用，都位于这条权衡曲线上的某一点。</p>
+
+  <h2 id="s2"><span class="en">2 &nbsp; The Spectrum at a Glance</span><span class="zh">2 &nbsp; 电磁波谱总览</span></h2>
+  <p class="en">Tap any band to see its typical uses. The full spectrum runs continuously — the boundaries below are conventions of engineering and biology, not breaks in physics.<sup>[3]</sup></p>
+  <p class="zh">点击任意波段查看其典型用途。整个波谱是连续的——下面的分界是工程与生物学上的约定，而非物理上的断裂。<sup>[3]</sup></p>
+
+  <div class="spectrum">
+    <div class="spectrum-bar" id="spectrumBar"></div>
+    <div class="band-detail" id="bandDetail"></div>
+    <div class="hint en">↑ Select a band above — from power-line frequencies to gamma rays</div>
+    <div class="hint zh">↑ 点击上方波段——从电力线频率到伽马射线</div>
+  </div>
+
+  <table>
+    <thead><tr><th class="en">Band</th><th class="zh">波段</th><th class="en">Frequency</th><th class="zh">频率</th><th class="en">Wavelength</th><th class="zh">波长</th><th class="en">Representative uses</th><th class="zh">代表性用途</th></tr></thead>
+    <tbody>
+      <tr><td>ELF / Power</td><td>3 Hz – 3 kHz</td><td>&gt; 100 km</td><td class="en">Grid power, motors, submarine communication</td><td class="zh">电网、电机、潜艇通信</td></tr>
+      <tr><td class="en">Radio</td><td class="zh">无线电</td><td>3 kHz – 300 MHz</td><td>1 m – 100 km</td><td class="en">Broadcasting, RFID, MRI, navigation</td><td class="zh">广播、RFID、磁共振、导航</td></tr>
+      <tr><td class="en">Microwave</td><td class="zh">微波</td><td>300 MHz – 300 GHz</td><td>1 mm – 1 m</td><td class="en">5G/Wi-Fi, radar, satellite, microwave heating</td><td class="zh">5G/Wi-Fi、雷达、卫星、微波加热</td></tr>
+      <tr><td class="en">Infrared</td><td class="zh">红外</td><td>300 GHz – 430 THz</td><td>700 nm – 1 mm</td><td class="en">Thermal imaging, remote controls, fibre optics</td><td class="zh">热成像、遥控器、光纤通信</td></tr>
+      <tr><td class="en">Visible</td><td class="zh">可见光</td><td>430 – 770 THz</td><td>380 – 700 nm</td><td class="en">Human vision, lighting, LiDAR, displays</td><td class="zh">人类视觉、照明、激光雷达、显示</td></tr>
+      <tr><td class="en">Ultraviolet</td><td class="zh">紫外</td><td>770 THz – 30 PHz</td><td>10 – 380 nm</td><td class="en">Sterilisation, lithography, fluorescence</td><td class="zh">杀菌消毒、光刻、荧光检测</td></tr>
+      <tr><td>X-ray / Gamma</td><td>30 PHz – 300 EHz+</td><td>&lt; 10 nm</td><td class="en">CT imaging, radiotherapy, gamma-ray astronomy</td><td class="zh">CT 成像、放射治疗、伽马射线天文学</td></tr>
+    </tbody>
+  </table>
+
+  <div class="timeline">
+    <div class="tl"><b>1865</b><span class="en">Maxwell publishes the equations of electromagnetism</span><span class="zh">麦克斯韦发表电磁场方程</span></div>
+    <div class="tl"><b>1888</b><span class="en">Hertz demonstrates radio waves in the laboratory</span><span class="zh">赫兹在实验室证实无线电波</span></div>
+    <div class="tl"><b>1895</b><span class="en">Röntgen discovers X-rays and medical imaging begins</span><span class="zh">伦琴发现 X 射线，医学成像开启</span></div>
+    <div class="tl"><b>1948</b><span class="en">Shannon founds information theory and channel capacity</span><span class="zh">香农创立信息论与信道容量理论</span></div>
+  </div>
+
+  <h2 id="s3"><span class="en">3 &nbsp; Low Frequencies: Power, Motors &amp; Energy Transfer</span><span class="zh">3 &nbsp; 低频：电力、电动机与能量传输</span></h2>
+  <p class="en">At the bottom of the spectrum, EM fields are used not to carry information but to move energy and do work. Alternating current at 50/60 Hz drives the global power grid; transformers exploit Faraday induction to step voltage up for efficient long-distance transmission and down for safe use.<sup>[4]</sup> In an electric motor, rotating magnetic fields exert torque on a rotor — the same induction principle, converted into mechanical motion. Induction motors, described classically by Fitzgerald, Kingsley and Umans, remain the workhorses of industry.<sup>[5]</sup></p>
+  <p class="zh">在波谱的最低端，电磁场的作用不是传递信息，而是输送能量、做功。50/60 Hz 交流电驱动着全球电网；变压器利用法拉第电磁感应升压以实现高效远距离输电，再降压供安全使用。<sup>[4]</sup> 在电动机中，旋转磁场对转子施加转矩——同一感应原理被转化为机械运动。由 Fitzgerald、Kingsley 与 Umans 经典论述的感应电机，至今仍是工业的主力。<sup>[5]</sup></p>
+  <p class="en">The same physics, without wires, gives <strong>wireless power transfer (WPT)</strong>. Inductive charging powers phones, toothbrushes, and increasingly electric vehicles, while resonant inductive coupling — demonstrated over metre-scale distances by Kurs et al. (2007) — trades efficiency for range and alignment freedom.<sup>[6]</sup> At still lower frequencies, extremely low-frequency (ELF) waves penetrate seawater, and navies have used them for one-way communication with submerged submarines, accepting data rates of only a few characters per minute.</p>
+  <p class="zh">同样的物理原理去掉导线，便得到<strong>无线能量传输（WPT）</strong>。感应充电为手机、电动牙刷乃至越来越多的电动汽车供电；Kurs 等人（2007）演示的谐振感应耦合则以效率换取距离与对位自由度，可在数米尺度上传输能量。<sup>[6]</sup> 在更低的频率上，极低频（ELF）波能穿透海水，各国海军曾用它与潜航中的潜艇进行单向通信，代价是速率仅为每分钟几个字符。</p>
+
+  <h2 id="s4"><span class="en">4 &nbsp; Radio &amp; Microwaves: Communication and Detection</span><span class="zh">4 &nbsp; 无线电与微波：通信与探测</span></h2>
+  <p class="en">Radio is where EM waves become <em>signals</em>. Claude Shannon's 1948 theory set the fundamental limit — channel capacity grows with bandwidth and signal-to-noise ratio — and every generation of wireless technology since has been an approach toward that limit.<sup>[7]</sup> Amplitude and frequency modulation gave way to digital schemes (QAM, OFDM), spread spectrum, and massive MIMO, culminating in 5G millimetre-wave systems and research toward 6G in sub-terahertz bands.<sup>[8]</sup></p>
+  <p class="zh">无线电是电磁波成为<em>信号</em>的起点。克劳德·香农 1948 年的理论给出了根本极限——信道容量随带宽与信噪比增长——此后每一代无线技术都是向这一极限的逼近。<sup>[7]</sup> 调幅与调频让位于数字调制（QAM、OFDM）、扩频与大规模 MIMO，最终发展到 5G 毫米波系统，以及面向亚太赫兹频段的 6G 研究。<sup>[8]</sup></p>
+  <p class="en"><strong>Detection</strong> is the mirror image of transmission. Receivers must extract microvolt signals from noise, a problem formalised in detection theory and embodied in everything from RFID tags and GPS receivers (which time signals from satellites to centimetre-level positioning) to radio telescopes. Software-defined radio has collapsed much of this hardware into code, making the receiver itself programmable.<sup>[9]</sup></p>
+  <p class="zh"><strong>探测</strong>是发射的镜像。接收机必须从噪声中提取微伏级信号，这一问题由检测理论形式化，并体现在从 RFID 标签、GPS 接收机（利用卫星信号计时实现厘米级定位）到射电望远镜的各种设备中。软件定义无线电把大量硬件收进了代码，使接收机本身变得可编程。<sup>[9]</sup></p>
+  <div class="callout"><b class="en">Key trade-off — </b><b class="zh">核心权衡 —— </b><span class="en">Higher frequency means more bandwidth and smaller antennas, but shorter range and poorer penetration through walls, rain, and foliage. This single trade-off explains why FM radio, Wi-Fi, and 5G occupy such different bands.</span><span class="zh">频率越高，带宽越大、天线越小，但传播距离越短，穿透墙体、雨水与植被的能力越差。仅这一个权衡，就解释了为何调频广播、Wi-Fi 与 5G 分处如此不同的频段。</span></div>
+
+  <h2 id="s5"><span class="en">5 &nbsp; Radar and Lidar</span><span class="zh">5 &nbsp; 雷达与激光雷达</span></h2>
+  <p class="en"><strong>Radar</strong> (radio detection and ranging) transmits microwave pulses and times their echoes to measure range, velocity (via the Doppler shift), and direction. Developed decisively in the Second World War, it now underpins air-traffic control, weather forecasting, automotive safety, and synthetic-aperture imaging from satellites.<sup>[10]</sup> Phased-array radar steers its beam electronically, with no moving parts.</p>
+  <p class="zh"><strong>雷达</strong>（无线电探测与测距）发射微波脉冲并对回波计时，从而测量距离、速度（利用多普勒频移）与方向。它在第二次世界大战中取得决定性发展，如今支撑着空中交通管制、天气预报、汽车安全，以及卫星合成孔径成像。<sup>[10]</sup> 相控阵雷达以电子方式偏转波束，无需任何运动部件。</p>
+  <p class="en"><strong>Lidar</strong> (laser radar) applies the identical principle at optical frequencies: a laser — most commonly at 905 nm or 1550 nm — replaces the radio transmitter. The thousand-fold shorter wavelength yields centimetre-level spatial resolution and dense 3D point clouds, at the cost of shorter range and sensitivity to fog. Lidar is now central to autonomous vehicles, topographic surveying, forestry, and archaeology, where it has revealed structures hidden beneath jungle canopy.<sup>[11]</sup> Radar and lidar are best read as one idea at two frequencies: robust, coarse, all-weather sensing versus fine, fragile, high-resolution sensing.</p>
+  <p class="zh"><strong>激光雷达（LiDAR）</strong>将同一原理搬到光学频率：以激光器（最常用 905 nm 或 1550 nm）代替无线电发射机。波长短上千倍，带来厘米级空间分辨率与密集的三维点云，代价是距离更短、且受雾气影响。激光雷达如今是自动驾驶汽车、地形测绘、林业与考古的核心工具，并曾揭示出丛林树冠之下隐藏的古代建筑结构。<sup>[11]</sup> 雷达与激光雷达最好理解为同一思想的两种频率版本：前者粗放、全天候、稳健；后者精细、高分辨率、却更脆弱。</p>
+
+  <h2 id="s6"><span class="en">6 &nbsp; Infrared, Visible Light &amp; Human Vision</span><span class="zh">6 &nbsp; 红外、可见光与人类视觉</span></h2>
+  <p class="en">Infrared radiation, discovered by Herschel in 1800, is the spectrum of heat: every warm object emits it. Thermal cameras render it visible for building inspection, medicine, and night vision, while the 1.3–1.55 µm infrared window carries nearly all long-haul fibre-optic communication — light, not radio, is the backbone of the internet.</p>
+  <p class="zh">红外辐射由赫歇尔于 1800 年发现，是“热”的波谱：一切温暖物体都会发出红外线。热像仪将其可视化，用于建筑检测、医学与夜视；而 1.3–1.55 µm 的红外窗口承载了几乎全部长途光纤通信——互联网的骨干是光，不是无线电。</p>
+  <p class="en"><strong>Human vision</strong> occupies a remarkably narrow slice — roughly 380–700 nm — tuned to the peak of the Sun's emission and the transparency window of water and air. The retina's three cone types sample this band into colour; the eye is, in engineering terms, a broadband optical receiver with about 120 dB of dynamic range. That evolution placed our vision here, and not in the radio or X-ray bands, is itself evidence for the trade-offs of Section 2: visible photons are energetic enough for photochemistry, yet not so energetic as to damage tissue.<sup>[12]</sup></p>
+  <p class="zh"><strong>人类视觉</strong>只占据出奇狭窄的一段——约 380–700 nm——恰好调谐在太阳辐射峰值以及水和空气的透明窗口上。视网膜的三种视锥细胞将这一波段采样为颜色；用工程语言说，眼睛是一台动态范围约 120 dB 的宽带光学接收机。进化把我们的视觉放在这里、而非无线电或 X 射线波段，本身就是第 2 节权衡的证据：可见光子能量足以驱动光化学反应，又不至于损伤组织。<sup>[12]</sup></p>
+
+  <h2 id="s7"><span class="en">7 &nbsp; Ultraviolet</span><span class="zh">7 &nbsp; 紫外线</span></h2>
+  <p class="en">Beyond violet, photon energies (3–124 eV) become sufficient to break chemical bonds. The literature divides ultraviolet into UV-A, UV-B, and UV-C, with sharply different effects. UV-C (100–280 nm) is germicidal and is used for water, air, and surface sterilisation; UV-B drives vitamin D synthesis but also sunburn and skin-cancer risk; and deep-UV lithography — at 193 nm and now 13.5 nm extreme UV — prints the transistors of modern microchips, arguably the most economically consequential UV application of all.<sup>[13]</sup> Fluorescence under UV excitation remains a workhorse of forensic, geological, and biomedical detection.</p>
+  <p class="zh">越过紫色，光子能量（3–124 eV）已足以打断化学键。文献将紫外线分为 UV-A、UV-B 与 UV-C，三者效应迥异。UV-C（100–280 nm）具有杀菌作用，用于水、空气与表面消毒；UV-B 促进维生素 D 合成，但也导致晒伤与皮肤癌风险；而深紫外光刻——193 nm 以及如今的 13.5 nm 极紫外——刻印出现代芯片的晶体管，堪称经济影响最大的紫外应用。<sup>[13]</sup> 紫外激发荧光至今仍是法医学、地质学与生物医学检测的常用手段。</p>
+
+  <h2 id="s8"><span class="en">8 &nbsp; X-Rays and CT Imaging</span><span class="zh">8 &nbsp; X 射线与 CT 成像</span></h2>
+  <p class="en">Röntgen's 1895 discovery of X-rays created medical imaging overnight.<sup>[14]</sup> X-ray photons pass through soft tissue but are absorbed by bone and dense material, casting a shadow image. <strong>Computed tomography (CT)</strong>, developed by Hounsfield and Cormack in the 1970s — work recognised by the 1979 Nobel Prize — rotates source and detector around the patient and reconstructs cross-sectional images from hundreds of projections using the mathematics of the Radon transform.<sup>[15]</sup> Modern multi-slice and dual-energy CT resolves sub-millimetre anatomy in seconds, and photon-counting detectors are the current research frontier. The governing tension is dose: ionising radiation is both the imaging agent and a health risk, so protocol optimisation is a literature in itself.</p>
+  <p class="zh">伦琴 1895 年发现 X 射线，一夜之间创立了医学成像。<sup>[14]</sup> X 射线光子能穿过软组织，却被骨骼与致密物质吸收，形成投影图像。<strong>计算机断层成像（CT）</strong>由 Hounsfield 与 Cormack 在 1970 年代发明——该工作获 1979 年诺贝尔奖——它让射线源与探测器绕患者旋转，再用拉东变换的数学方法，从数百个投影重建出横断面图像。<sup>[15]</sup> 现代多层螺旋与双能 CT 能在数秒内分辨亚毫米级解剖结构，光子计数探测器则是当前研究前沿。其核心矛盾在于剂量：电离辐射既是成像媒介，也是健康风险，因此扫描方案优化本身已成为一个文献领域。</p>
+
+  <h2 id="s9"><span class="en">9 &nbsp; Gamma Rays, High-Energy Particles &amp; Astrophysics</span><span class="zh">9 &nbsp; 伽马射线、高能粒子与天体物理学</span></h2>
+  <p class="en">At the top of the spectrum, the distinction between "wave" and "particle" dissolves. Gamma rays are photons emitted by atomic nuclei, by antimatter annihilation, and by the most violent events in the universe — supernovae, neutron-star mergers, and gamma-ray bursts. Because individual photons can be counted and their energies measured, gamma-ray astronomy is as much particle physics as optics.<sup>[16]</sup></p>
+  <p class="zh">在波谱的顶端，“波”与“粒子”的界限消融了。伽马射线是原子核、正反物质湮灭，以及宇宙中最剧烈的事件——超新星、中子星并合与伽马射线暴——发出的光子。由于单个光子可以被计数、能量可以被测量，伽马射线天文学既是光学，也是粒子物理学。<sup>[16]</sup></p>
+  <p class="en"><strong>Astrophysics</strong> uses the whole spectrum as its instrument. Radio astronomy (from Jansky's 1933 discovery of cosmic radio noise to modern interferometers such as the SKA) maps cold gas and pulsars; infrared and optical telescopes observe stars and exoplanets; X-ray and gamma-ray observatories — Chandra, Fermi — observe matter falling into black holes. Synchrotron radiation from charged particles spiralling in magnetic fields, and the cosmic microwave background at 160 GHz — the cooled afterglow of the Big Bang — complete the picture: every band reveals a different universe, and multi-wavelength astronomy is the field's methodological consensus.<sup>[17,18]</sup> On Earth, the same high-energy photons are used in radiotherapy and in industrial inspection, closing the loop from cosmology to clinic.</p>
+  <p class="zh"><strong>天体物理学</strong>把整个波谱当作它的仪器。射电天文学（从 1933 年 Jansky 发现宇宙射电噪声，到 SKA 等现代干涉阵列）描绘冷气体与脉冲星；红外与光学望远镜观测恒星与系外行星；X 射线与伽马射线天文台——如 Chandra、Fermi——观测坠入黑洞的物质。带电粒子在磁场中螺旋运动发出的同步辐射，以及 160 GHz 的宇宙微波背景——大爆炸冷却后的余辉——补全了这幅图景：每个波段都揭示一个不同的宇宙，多波段天文学已成为该领域的方法共识。<sup>[17,18]</sup> 在地球上，同样的高能光子被用于放射治疗与工业探伤，完成从宇宙学到临床的闭环。</p>
+
+  <h2 id="s10"><span class="en">10 &nbsp; Challenges and Future Directions</span><span class="zh">10 &nbsp; 挑战与未来方向</span></h2>
+  <p class="en">Three themes recur across the literature. First, <strong>spectrum scarcity</strong>: the usable radio spectrum is finite and crowded, driving research into terahertz bands, visible-light communication (Li-Fi), and dynamic spectrum sharing. Second, <strong>efficiency and safety</strong>: wireless power, RF exposure limits, and CT dose all require delivering EM energy precisely where it is wanted and nowhere else. Third, <strong>convergence</strong>: sensing and communication are merging (integrated sensing and communication in 6G), imaging and therapy are merging (theranostics), and detectors across all bands increasingly share the same semiconductor and machine-learning machinery. The next decade's literature will likely be written less band-by-band and more system-by-system.</p>
+  <p class="zh">文献中反复出现三个主题。其一，<strong>频谱稀缺</strong>：可用的无线电频谱有限且日益拥挤，推动了太赫兹频段、可见光通信（Li-Fi）与动态频谱共享的研究。其二，<strong>效率与安全</strong>：无线供电、射频暴露限值与 CT 剂量，都要求把电磁能量精确送到需要之处、且仅止于此。其三，<strong>融合</strong>：感知与通信正在合并（6G 的通感一体化），成像与治疗正在合并（诊疗一体化），各波段的探测器也越来越多地共享同一套半导体与机器学习技术。未来十年的文献，或许将更少按波段书写，而更多按系统书写。</p>
+
+  <h2 id="conclusion"><span class="en">11 &nbsp; Conclusion</span><span class="zh">11 &nbsp; 结论</span></h2>
+  <p class="en">From the 50 Hz hum of a motor to photons from a gamma-ray burst, the electromagnetic spectrum is a single continuum exploited at every scale. Radio signals — this review's starting point — are one region of that continuum, but the design logic that governs them (frequency, wavelength, bandwidth, noise, and propagation) governs all the rest. Understanding any one application in depth therefore illuminates the whole spectrum, which is why electromagnetism remains, a century and a half after Maxwell, one of the most productive frameworks in science and engineering.</p>
+  <p class="zh">从电动机 50 Hz 的嗡鸣，到伽马射线暴的光子，电磁波谱是一个在每个尺度上都被利用的连续统一体。无线电信号——本文的出发点——只是这一连续体中的一个区域，但支配它的设计逻辑（频率、波长、带宽、噪声与传播）同样支配其余一切。因此，深入理解任何一个应用，都能照亮整个波谱；这正是电磁学在麦克斯韦之后一个半世纪，仍是科学与工程中最富成果的框架之一的原因。</p>
+
+  <h2 id="refs"><span class="en">References</span><span class="zh">参考文献</span></h2>
+  <ol class="refs">
+    <li>Maxwell, J. C. (1865). A dynamical theory of the electromagnetic field. <i>Philosophical Transactions of the Royal Society</i>, 155, 459–512.</li>
+    <li>Hertz, H. (1888). Über Strahlen elektrischer Kraft. <i>Sitzungsberichte der Berliner Akademie der Wissenschaften</i>. (English transl. in <i>Electric Waves</i>, 1893.)</li>
+    <li>Jackson, J. D. (1999). <i>Classical Electrodynamics</i> (3rd ed.). Wiley.</li>
+    <li>Chapman, S. J. (2012). <i>Electric Machinery Fundamentals</i> (5th ed.). McGraw-Hill.</li>
+    <li>Fitzgerald, A. E., Kingsley, C., &amp; Umans, S. D. (2003). <i>Electric Machinery</i> (6th ed.). McGraw-Hill.</li>
+    <li>Kurs, A., Karalis, A., Moffatt, R., Joannopoulos, J. D., Fisher, P., &amp; Soljačić, M. (2007). Wireless power transfer via strongly coupled magnetic resonances. <i>Science</i>, 317(5834), 83–86.</li>
+    <li>Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i>, 27(3), 379–423.</li>
+    <li>Rappaport, T. S., et al. (2019). Wireless communications and applications above 100 GHz. <i>IEEE Access</i>, 7, 78729–78757.</li>
+    <li>Haykin, S. (2001). <i>Communication Systems</i> (4th ed.). Wiley.</li>
+    <li>Skolnik, M. I. (2008). <i>Radar Handbook</i> (3rd ed.). McGraw-Hill.</li>
+    <li>Behroozpour, B., et al. (2017). Lidar system architectures and circuits. <i>IEEE Communications Magazine</i>, 55(10), 135–142.</li>
+    <li>Hecht, E. (2017). <i>Optics</i> (5th ed.). Pearson.</li>
+    <li>Stolz, F., et al. (2021). Extreme ultraviolet lithography. (Review literature on EUV at 13.5 nm.)</li>
+    <li>Röntgen, W. C. (1895). Über eine neue Art von Strahlen. <i>Sitzungsberichte der Würzburger Physikalisch-Medicinischen Gesellschaft</i>.</li>
+    <li>Hounsfield, G. N. (1973). Computerized transverse axial scanning (tomography). <i>British Journal of Radiology</i>, 46, 1016–1022; Cormack, A. M. (1963). <i>Journal of Applied Physics</i>, 34, 2722–2727.</li>
+    <li>Longair, M. S. (2011). <i>High Energy Astrophysics</i> (3rd ed.). Cambridge University Press.</li>
+    <li>Condon, J. J., &amp; Ransom, S. M. (2016). <i>Essential Radio Astronomy</i>. Princeton University Press.</li>
+    <li>Penzias, A. A., &amp; Wilson, R. W. (1965). A measurement of excess antenna temperature at 4080 Mc/s. <i>Astrophysical Journal</i>, 142, 419–421.</li>
+    <li>Griffiths, D. J. (2017). <i>Introduction to Electrodynamics</i> (4th ed.). Cambridge University Press.</li>
+    <li>Balanis, C. A. (2016). <i>Antenna Theory: Analysis and Design</i> (4th ed.). Wiley.</li>
+  </ol>
+  <p class="note en">Note: This review is a synthesis for general reading. Readers should consult the primary sources above for technical detail and verify bibliographic records before formal citation.</p>
+  <p class="note zh">注：本文为面向一般读者的综述性梳理。技术细节请查阅上述原始文献，正式引用前请核对书目信息。</p>
+</article></div>
+
+<footer>
+  <div class="en">© 2026 Radio Signals Literature Review. All rights reserved. No part of this review may be reproduced without permission, except for brief quotations with attribution.</div>
+  <div class="zh">© 2026 无线电信号文献综述。版权所有。未经许可不得复制本文任何部分，注明出处的简短引用除外。</div>
+  <div style="margin-top:6px">Electromagnetic Spectrum · Literature Review · <span class="en">English / Chinese bilingual edition</span><span class="zh">中英双语版</span></div>
+</footer>
+
+<script>
+var BANDS=[
+ {cls:'b1',en:'ELF & Power',zh:'极低频与电力',f:'3 Hz – 3 kHz',enD:'Grid power (50/60 Hz), electric motors, induction heating, wireless charging and ELF submarine communication. Energy, not information.',zhD:'电网电力（50/60 Hz）、电动机、感应加热、无线充电与极低频潜艇通信。传递的是能量，而非信息。'},
+ {cls:'b2',en:'Radio',zh:'无线电',f:'3 kHz – 300 MHz',enD:'AM/FM broadcasting, shortwave, RFID, amateur radio, MRI and navigation beacons. Long range, excellent penetration.',zhD:'调幅/调频广播、短波、RFID、业余无线电、磁共振成像与导航信标。传播远、穿透强。'},
+ {cls:'b3',en:'Microwave',zh:'微波',f:'300 MHz – 300 GHz',enD:'Mobile networks (4G/5G), Wi-Fi, satellite links, radar and microwave heating. The workhorse of modern wireless communication.',zhD:'移动网络（4G/5G）、Wi-Fi、卫星链路、雷达与微波加热。现代无线通信的主力。'},
+ {cls:'b4',en:'Infrared',zh:'红外',f:'300 GHz – 430 THz',enD:'Heat radiation, thermal imaging, remote controls and fibre-optic communication at 1.55 µm.',zhD:'热辐射、热成像、遥控器，以及 1.55 µm 光纤通信。'},
+ {cls:'b5',en:'Visible Light',zh:'可见光',f:'430 – 770 THz',enD:'Human vision (380–700 nm), lighting, displays, photography and optical lidar. The only band our eyes detect directly.',zhD:'人类视觉（380–700 nm）、照明、显示、摄影与光学激光雷达。唯一能被眼睛直接感知的波段。'},
+ {cls:'b6',en:'Ultraviolet',zh:'紫外',f:'770 THz – 30 PHz',enD:'Germicidal sterilisation, fluorescence detection, tanning and skin risk, and deep-UV / EUV chip lithography.',zhD:'杀菌消毒、荧光检测、日晒与皮肤风险，以及深紫外 / 极紫外芯片光刻。'},
+ {cls:'b7',en:'X-ray & Gamma',zh:'X射线与伽马',f:'30 PHz – 300 EHz+',enD:'CT and radiography, radiotherapy, industrial inspection, and gamma-ray astronomy of high-energy particles and cosmic events.',zhD:'CT 与放射成像、放射治疗、工业探伤，以及研究高能粒子与宇宙事件的伽马射线天文学。'}
+];
+var curLang='en', curBand=2;
+function renderBands(){
+  var bar=document.getElementById('spectrumBar'); bar.innerHTML='';
+  BANDS.forEach(function(b,i){
+    var btn=document.createElement('button'); btn.className='band '+b.cls; btn.setAttribute('aria-pressed', i===curBand?'true':'false');
+    btn.innerHTML='<b>'+(curLang==='zh'?b.zh:b.en)+'</b><span>'+b.f+'</span>';
+    btn.onclick=function(){curBand=i; renderBands();};
+    bar.appendChild(btn);
+  });
+  var b=BANDS[curBand];
+  document.getElementById('bandDetail').innerHTML='<h4>'+(curLang==='zh'?b.zh:b.en)+' · '+b.f+'</h4><p>'+(curLang==='zh'?b.zhD:b.enD)+'</p>';
+}
+function setLang(l){
+  curLang=l; document.body.setAttribute('data-lang',l); document.documentElement.lang=(l==='zh'?'zh-CN':'en');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.getElementById('btn-zh').classList.toggle('active',l==='zh');
+  renderBands();
+}
+renderBands();
+</script>
+</body>
+</html>
