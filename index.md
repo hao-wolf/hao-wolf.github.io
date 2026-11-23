@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-# 浩哥读书 - Haoling's reading list
+
 ## AI and Cognitive
 - [Thinking，fast and slow](./_posts/thinking_slow_and_fast_bilingual.html)
 
